@@ -81,7 +81,7 @@ const Giphy = () => {
     setIsLoading(true);
 
     try {
-      const results = await axios("https://4api.giphy.com/v1/gifs/search", {
+      const results = await axios("https://api.giphy.com/v1/gifs/search", {
         params: {
           api_key: "tAEFUgagRjRNkU24orQdFB8EHMcNTUSe",
           q: search,
@@ -89,6 +89,7 @@ const Giphy = () => {
         }
       });
       setData(results.data.data);
+      console.log(results)
     } catch (err) {
       setIsError(true);
       setTimeout(() => setIsError(false), 4000);
